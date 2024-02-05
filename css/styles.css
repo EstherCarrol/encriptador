@@ -1,0 +1,121 @@
+body{
+    background: #F3F5FC;
+    font-family: 'Inter', sans-serif;
+}
+
+header{
+    background: #0A3871;
+    display: flex;
+    padding: 10px;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+header img{
+    width: 90px;
+    height: 32px;
+}
+
+header h1{
+    font-size: 2em;
+    color: #F3F5FC;
+}
+main{
+    padding: 0 40px;
+}
+
+.input-output{
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-mensaje{
+    display: flex;
+    align-items: stretch;
+}
+
+.input-mensaje textarea{
+    padding: 12px 20px;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    color: #0A3871;
+    font-size: 20px;
+    
+}
+
+
+
+.input-mensaje textarea::placeholder{
+    color: #0A3871;
+    font-size: 20px;
+}
+
+
+.output h2{
+    font-size: 25px;
+    font-weight: bold;
+    color: #343A40;
+}
+
+.output p{
+    color: #495057;
+}
+
+.output button{
+    border-radius: 24px;
+    border-width: 1px;
+    border-style: solid;
+    border-color:#0A3871 ;
+    padding: 15px 20px;
+    width: 100%;
+    font-size: 18px;
+    color: #0A3871;
+    margin: 20px 0;
+}
+
+.reglas{
+    margin: 20px 0;
+}
+.reglas i{
+    display: inline;
+    float: left;
+    margin-right: 10px;
+
+}
+
+.reglas p{
+    color: #495057;
+    margin: 0 10px;
+}
+
+.contenedor-opciones{
+    display: flex;
+    margin: 10px 0;
+    justify-content: space-between;
+    gap: 3em;
+
+}
+
+.contenedor-opciones button{
+    border-radius: 24px;
+    border-width: 1px;
+    border-style: solid;
+    border-color:#0A3871 ;
+    padding: 15px 20px;
+    width: 100%;
+    font-size: 18px;
+    color: #0A3871;
+}
+
+footer{
+    text-align: center;
+    padding: 40px;
+    font-weight: bold;
+    background: url(/img/textura-footer.jpg);
+}
+
+footer p{
+    font-size: 14px;
+    margin: 20px;
+}

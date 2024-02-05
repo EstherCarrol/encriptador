@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador - Reto Alura</title>
     <script src="https://kit.fontawesome.com/506e57ed74.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
     <header>
@@ -13,23 +18,31 @@
     </header>
     <main>
         <div class="input-output">
-            <textarea cols="10" rows="10" placeholder="Ingrese el texto aquí"></textarea><button><i class="fa-solid fa-eye-slash"></i></button>
-            <div>
-                <p>Área para mostrar el texto encriptado</p>
+            <div class="input-mensaje">
+                
+                <textarea id="mensaje" placeholder="Ingrese el texto aquí"></textarea>
+            </div>
+
+            <div class="output">
                 <img src="img/Muñeco.png" alt="No se ha encontrado nada">
-                <input type="button" value="Copiar">
+                <h2>Ningún mensaje fue encontrado</h2>
+                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                <button>Copiar</button>
             </div>
         </div>
-        <div class="contenedor-opciones">
+        <div class="reglas">
             <i class="fa-solid fa-circle-info"></i><p>Solo letras minúsculas y sin acentos</p>
-            <input type="button" value="Encriptar">
-            <input type="button" value="Desencriptar">
-            <input type="button" value="Limpiar">
+        </div>
+        <div class="contenedor-opciones">
+            <button id="btn-encriptar" onclick="encriptarMensaje()">Encriptar</button>
+            <button>Desencriptar</button>
+            <button>Limpiar</button>
         </div>
     </main>
     <footer>
         <p>Desarrollador: Jennebier Esther Alvarado López</p>
         <p>&copy Copyright 2024</p>
     </footer>
+    <script src="/js/controlador.js"></script>
 </body>
 </html>
