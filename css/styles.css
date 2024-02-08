@@ -24,6 +24,8 @@ main{
     padding: 0 40px;
 }
 
+
+
 .input-output{
     display: flex;
     justify-content: space-between;
@@ -58,6 +60,7 @@ main{
     flex-direction: column;
     justify-content: space-between;
 }
+
 
 
 .output h2{
