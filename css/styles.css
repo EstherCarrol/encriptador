@@ -32,6 +32,7 @@ main{
 .input-mensaje{
     display: flex;
     align-items: stretch;
+    flex: 0.5;
 }
 
 .input-mensaje textarea{
@@ -41,6 +42,7 @@ main{
     width: 100%;
     color: #0A3871;
     font-size: 20px;
+    resize: none;
     
 }
 
@@ -49,6 +51,12 @@ main{
 .input-mensaje textarea::placeholder{
     color: #0A3871;
     font-size: 20px;
+}
+
+.output{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
@@ -72,11 +80,23 @@ main{
     font-size: 18px;
     color: #0A3871;
     margin: 20px 0;
+    cursor: pointer;
+}
+
+.output button:hover{
+    background: #0A3871;
+    color: white;
+    border: none;
+}
+
+.contador{
+    margin: 10px 0;
 }
 
 .reglas{
     margin: 20px 0;
 }
+
 .reglas i{
     display: inline;
     float: left;
@@ -106,6 +126,10 @@ main{
     width: 100%;
     font-size: 18px;
     color: #0A3871;
+}
+
+.contenedor-opciones button:hover{
+    cursor: pointer;
 }
 
 footer{

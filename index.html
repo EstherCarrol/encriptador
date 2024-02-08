@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
+
 <body>
     <header>
         <img src="img/Logo.png">
@@ -19,24 +21,28 @@
     <main>
         <div class="input-output">
             <div class="input-mensaje">
-                
-                <textarea id="mensaje" placeholder="Ingrese el texto aquí"></textarea>
+                <textarea id="ingreso-mensaje" placeholder="Ingrese el texto aquí"></textarea>
             </div>
 
             <div class="output">
-                <img src="img/Muñeco.png" alt="No se ha encontrado nada">
-                <h2>Ningún mensaje fue encontrado</h2>
-                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
-                <button>Copiar</button>
+                <div class="mostrar-mensaje">
+                    <img src="img/Muñeco.png" alt="No se ha encontrado nada">
+                    <h2>Ningún mensaje fue encontrado</h2>
+                    <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+
+                <button id="btn-copiar" onclick="copiarMensaje()">Copiar <i class="fa-regular fa-copy"></i></button>
             </div>
         </div>
+        <div class="contador"><span id="contador-caracteres">Mensaje de 0 caracteres</span></div>
         <div class="reglas">
-            <i class="fa-solid fa-circle-info"></i><p>Solo letras minúsculas y sin acentos</p>
+            <i class="fa-solid fa-circle-info"></i>
+            <p>Solo letras minúsculas y sin acentos</p>
         </div>
         <div class="contenedor-opciones">
             <button id="btn-encriptar" onclick="encriptarMensaje()">Encriptar</button>
-            <button>Desencriptar</button>
-            <button>Limpiar</button>
+            <button id="btn-desencriptar" onclick="desencriptarMensaje()">Desencriptar</button>
+            <button id="btn-limpiar" onclick="borrarMensaje()">Limpiar</button>
         </div>
     </main>
     <footer>
@@ -45,4 +51,5 @@
     </footer>
     <script src="/js/controlador.js"></script>
 </body>
+
 </html>
