@@ -94,10 +94,21 @@ main{
 
 .contador{
     margin: 10px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 2em;
+}
+
+.contador button{
+    border-radius: 24px;
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px 10px;
 }
 
 .reglas{
     margin: 20px 0;
+    color: #495057;
 }
 
 .reglas i{
@@ -108,8 +119,17 @@ main{
 }
 
 .reglas p{
-    color: #495057;
     margin: 0 10px;
+}
+
+#btn-convertir{
+    margin: 15px 0 0 0;
+    
+}
+
+.error{
+    color: red;
+    font-size: 20px;
 }
 
 .contenedor-opciones{

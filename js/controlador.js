@@ -24,14 +24,28 @@ mensaje.addEventListener('input', function(e) {
     
 });
 
-
+/**
+ * @author Jennebier Esther Alvarado López
+ * @date 09/02/2024
+ * @description Validar el formato de una cadena de texto
+ * @param {String} cadena 
+ * @returns Boolean True si la cadena cumple con el formato, false en caso contrario
+ */
 function validarCadena(cadena) {
     const expr1 = /[A-Z]/g; //Expresión regular para identificar todas las coincidencias de letras mayúsculas
     const expr2 = /[0-9]/g; //Expresión regular para identificar todas las coincidencias de números
+    const expr3 = /[ÁáÉéÍíÓóÚúü]/g; //Expresión regular para identificar todas las coincidencias de letras con acentos
+    const expr4 = /\W/; //Expresión regular para identificar cualquier caracter especial
     let resultado1 = cadena.match(expr1);
     let resultado2 = cadena.match(expr2);
+    let resultado3 = cadena.match(expr3);
+    let resultado4 = cadena.match(expr4);
     //Si la cadena cumple con el formato solicitado
-    if (resultado1==null && resultado2==null) {
+    if (resultado1!=null && resultado2==null && resultado3==null && resultado4==null) {
+        document.getElementById('btn-convertir').removeAttribute('disabled');
+    }
+    if (resultado1==null && resultado2==null && resultado3==null && resultado4==null) {
+        document.querySelector('#btn-convertir').setAttribute('disabled', 'true');
         return true;
     } else{ //Si no cumple
         return false;
@@ -46,13 +60,12 @@ function validarCadena(cadena) {
  */
 function encriptarMensaje() {
     mensaje=document.getElementById("ingreso-mensaje").value;
+    const reglas = document.querySelector('.reglas');
     if (!validarCadena(mensaje)) {
-        alert("Formato no válido");
+        reglas.classList.add('error');
         return false;
     }
-    document.querySelector('#btn-desencriptar').removeAttribute('disabled');
-
-    
+    reglas.classList.remove('error');
     mensajeEncriptado='';
 
     if (mensaje=='') {
@@ -89,6 +102,46 @@ function encriptarMensaje() {
     mostrarMensaje(mensajeEncriptado);
     
 }
+
+
+/**
+ * @author Jennebier Esther Alvarado López
+ * @date 09/02/2024
+ * @description Desencriptar mensaje sutituyendo caracteres especificos de una cadena de texto 
+ * @returns 0 si no hay mensaje
+ */
+function desencriptarMensaje() {
+    mensaje=document.getElementById("ingreso-mensaje").value;
+ 
+    mensajeDesencriptado='';
+
+    if (mensaje=='') {
+        //Borra el mensaje encriptado
+        const elementDiv = document.getElementById('mostar-mensaje');
+        elementDiv.innerHTML=`<img src="img/Muñeco.png" alt="No se ha encontrado nada">
+        <h2>Ningún mensaje fue encontrado</h2>
+        <p>Ingresa el texto que desees encriptar o desencriptar.</p>`;
+        return 0;
+    }
+ 
+  
+    mensajeDesencriptado=mensaje.replace(/ai/g, "a");
+    mensaje=mensajeDesencriptado;
+    mensajeDesencriptado=mensaje.replace(/enter/g, "e");
+    mensaje=mensajeDesencriptado;
+    mensajeDesencriptado=mensaje.replace(/imes/g, "i");
+    mensaje=mensajeDesencriptado;
+    mensajeDesencriptado=mensaje.replace(/ober/g, "o");
+    mensaje=mensajeDesencriptado;
+    mensajeDesencriptado=mensaje.replace(/ufat/g, "u");
+    mensaje=mensajeDesencriptado;
+
+    console.log(mensajeDesencriptado);
+    mostrarMensaje(mensajeDesencriptado);
+    
+}
+
+
 
 /**
  * @author Jennebier Esther Alvarado López
@@ -127,3 +180,28 @@ function reiniciar() {
 }
 
 
+
+
+/**
+ * @author Jennebier Esther Alvarado López
+ * @date 09/02/2024
+ * @description Copia el mensaje de la sección
+ */
+function copiarMensaje() {
+    const elementDiv = document.getElementById('mostar-mensaje');
+    const elementP = elementDiv.querySelector('p');
+    navigator.clipboard.writeText(elementP.textContent);
+}
+
+
+/**
+ * @author Jennebier Esther Alvarado López
+ * @date 09/02/2024
+ * @description Conviete el mensaje a minúsculas
+ */
+function converirMinusculas() {
+    mensaje = document.getElementById('ingreso-mensaje').value;
+    mensaje = mensaje.toLowerCase();
+    document.getElementById('ingreso-mensaje').value = mensaje;
+    document.querySelector('#btn-convertir').setAttribute('disabled', 'true');
+}
