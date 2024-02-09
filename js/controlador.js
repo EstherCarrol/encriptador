@@ -24,16 +24,35 @@ mensaje.addEventListener('input', function(e) {
     
 });
 
+
+function validarCadena(cadena) {
+    const expr1 = /[A-Z]/g; //Expresión regular para identificar todas las coincidencias de letras mayúsculas
+    const expr2 = /[0-9]/g; //Expresión regular para identificar todas las coincidencias de números
+    let resultado1 = cadena.match(expr1);
+    let resultado2 = cadena.match(expr2);
+    //Si la cadena cumple con el formato solicitado
+    if (resultado1==null && resultado2==null) {
+        return true;
+    } else{ //Si no cumple
+        return false;
+    }
+}
+
+
 /**
  * @author Jennebier Esther Alvarado López
  * @date 08/02/2024
  * @description Encriptar mensaje sutituyendo caracteres especificos de una cadena de texto 
  */
 function encriptarMensaje() {
-
+    mensaje=document.getElementById("ingreso-mensaje").value;
+    if (!validarCadena(mensaje)) {
+        alert("Formato no válido");
+        return false;
+    }
     document.querySelector('#btn-desencriptar').removeAttribute('disabled');
 
-    mensaje=document.getElementById("ingreso-mensaje").value;
+    
     mensajeEncriptado='';
 
     if (mensaje=='') {
@@ -106,6 +125,5 @@ function reiniciar() {
     //Deshabilitar el botón desencriptar
     document.querySelector('#btn-desencriptar').setAttribute('disabled', 'true');
 }
-
 
 
