@@ -35,7 +35,7 @@ function validarCadena(cadena) {
     const expr1 = /[A-Z]/g; //Expresión regular para identificar todas las coincidencias de letras mayúsculas
     const expr2 = /[0-9]/g; //Expresión regular para identificar todas las coincidencias de números
     const expr3 = /[ÁáÉéÍíÓóÚúü]/g; //Expresión regular para identificar todas las coincidencias de letras con acentos
-    const expr4 = /\W/; //Expresión regular para identificar cualquier caracter especial
+    const expr4 = /[^\w\s]/;; //Expresión regular para identificar cualquier caracter especial
     let resultado1 = cadena.match(expr1);
     let resultado2 = cadena.match(expr2);
     let resultado3 = cadena.match(expr3);
@@ -175,8 +175,6 @@ function reiniciar() {
     //Poner en cero el contador de caracteres
     contador.innerHTML = `Mensaje de ${0} ${palabra}`;
 
-    //Deshabilitar el botón desencriptar
-    document.querySelector('#btn-desencriptar').setAttribute('disabled', 'true');
 }
 
 
@@ -204,4 +202,6 @@ function converirMinusculas() {
     mensaje = mensaje.toLowerCase();
     document.getElementById('ingreso-mensaje').value = mensaje;
     document.querySelector('#btn-convertir').setAttribute('disabled', 'true');
+    const reglas = document.querySelector('.reglas');
+    reglas.classList.remove('error');
 }
