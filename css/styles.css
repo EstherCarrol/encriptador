@@ -29,12 +29,13 @@ main{
 .input-output{
     display: flex;
     justify-content: space-between;
+    gap: 4em;
 }
 
 .input-mensaje{
     display: flex;
     align-items: stretch;
-    flex: 0.5;
+    flex: 1;
 }
 
 .input-mensaje textarea{
@@ -47,7 +48,6 @@ main{
     resize: none;
     
 }
-
 
 
 .input-mensaje textarea::placeholder{
@@ -166,4 +166,33 @@ footer{
 footer p{
     font-size: 14px;
     margin: 20px;
+}
+
+
+/*Estilos para tablets y celulares*/
+@media screen and (max-width:700px) {
+    .input-output{
+        flex-wrap: wrap;
+    }
+
+    header{
+        flex-wrap: wrap;
+    }
+    header img{
+        width: 70px;
+        height: 20px;
+    }
+    header h1{
+        font-size: 1em;
+    }
+
+
+    .output {
+        flex-wrap: wrap;
+    }
+
+    .contenedor-opciones {
+        flex-wrap: wrap;
+    }
+
 }
