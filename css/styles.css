@@ -174,6 +174,19 @@ footer p{
     margin: 20px;
 }
 
+footer a{
+    margin: 10px;
+    font-size: 1.5em;
+    color: black;
+}
+
+
+
+footer a:nth-of-type(2):hover{
+    color: #0A3871;
+}
+
+
 
 /*Estilos para tablets y celulares*/
 @media screen and (max-width:700px) {
