@@ -32,6 +32,8 @@ main{
     gap: 4em;
 }
 
+
+
 .input-mensaje{
     display: flex;
     align-items: stretch;
@@ -61,6 +63,10 @@ main{
     justify-content: space-between;
 }
 
+.output #mostrar-mensaje{
+    width: 393px;
+    height: 363px;
+}
 
 
 .output h2{
@@ -171,6 +177,33 @@ footer p{
 
 /*Estilos para tablets y celulares*/
 @media screen and (max-width:700px) {
+    
+    main{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    main .reglas{
+        order: 2;
+    }
+
+    main .input-output{
+        order: 1;
+    }
+
+    .input-mensaje{
+        order: 2;
+    }
+
+
+    main .contador{
+        order: 3;
+    }
+    
+    main .contenedor-opciones{
+        order: 4;
+    }
+
+    
     .input-output{
         flex-wrap: wrap;
     }
@@ -183,7 +216,7 @@ footer p{
         height: 20px;
     }
     header h1{
-        font-size: 1em;
+        font-size: 0.9em;
     }
 
 
@@ -193,6 +226,10 @@ footer p{
 
     .contenedor-opciones {
         flex-wrap: wrap;
+    }
+
+    .output img{
+        max-width: 100%;
     }
 
 }

@@ -70,10 +70,7 @@ function encriptarMensaje() {
 
     if (mensaje=='') {
         //Borra el mensaje encriptado
-        const elementDiv = document.getElementById('mostar-mensaje');
-        elementDiv.innerHTML=`<img src="img/Muñeco.png" alt="No se ha encontrado nada">
-        <h2>Ningún mensaje fue encontrado</h2>
-        <p>Ingresa el texto que desees encriptar o desencriptar.</p>`;
+        reiniciar();
         return 0;
     }
     for (let i = 0; i < mensaje.length; i++) {
@@ -117,10 +114,7 @@ function desencriptarMensaje() {
 
     if (mensaje=='') {
         //Borra el mensaje encriptado
-        const elementDiv = document.getElementById('mostar-mensaje');
-        elementDiv.innerHTML=`<img src="img/Muñeco.png" alt="No se ha encontrado nada">
-        <h2>Ningún mensaje fue encontrado</h2>
-        <p>Ingresa el texto que desees encriptar o desencriptar.</p>`;
+        reiniciar();
         return 0;
     }
  
@@ -152,8 +146,16 @@ function desencriptarMensaje() {
 function mostrarMensaje(mensaje) {
     const elementDiv = document.getElementById('mostar-mensaje');
     elementDiv.innerHTML=`<p>${mensaje}</p>`;
-    elementDiv.style.height='350px';
-    elementDiv.style.width='395px';
+    elementDiv.style.height='363px';
+    elementDiv.style.width='393px';
+    elementDiv.style.overflowY='scroll';
+
+
+    const mediaQuery = window.matchMedia("(max-width: 700px)");
+    if (mediaQuery.matches) {
+        elementDiv.style.width = 'auto';
+    }
+
 }
 
 
@@ -174,6 +176,8 @@ function reiniciar() {
 
     //Poner en cero el contador de caracteres
     contador.innerHTML = `Mensaje de ${0} ${palabra}`;
+
+    elementDiv.style.overflowY='visible';
 
 }
 
